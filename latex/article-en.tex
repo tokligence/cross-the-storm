@@ -1,0 +1,117 @@
+% !TEX program = xelatex
+% Cross the Storm: An Ordinary Person's Survival Guide for the Silicon Age
+% Compile with: xelatex article-en.tex
+
+\documentclass[a4paper,12pt]{article}
+
+% ============================================================
+% Packages
+% ============================================================
+\usepackage{fontspec}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor={blue!70!black},urlcolor={HTML2196F3},citecolor={blue!70!black}]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+% ============================================================
+% Color definitions
+% ============================================================
+\definecolor{HTML2196F3}{HTML}{2196F3}
+\definecolor{sectioncolor}{HTML}{1565C0}
+\definecolor{subsectioncolor}{HTML}{1976D2}
+\definecolor{rulecolor}{HTML}{BBDEFB}
+\definecolor{quotecolor}{HTML}{455A64}
+\definecolor{quotebar}{HTML}{2196F3}
+\definecolor{quotebg}{HTML}{F5F5F5}
+
+% ============================================================
+% Fonts
+% ============================================================
+\setmainfont{Times New Roman}[BoldFont=Times New Roman Bold, ItalicFont=Times New Roman Italic]
+\setsansfont{Helvetica Neue}
+\setmonofont{Courier New}
+
+% ============================================================
+% Spacing
+% ============================================================
+\setstretch{1.15}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0em}
+
+% ============================================================
+% Section formatting
+% ============================================================
+\titleformat{\section}
+  {\Large\bfseries\sffamily\color{sectioncolor}}
+  {\thesection}{1em}{}
+  [\vspace{-0.5em}{\color{rulecolor}\rule{\textwidth}{1.5pt}}]
+
+\titleformat{\subsection}
+  {\large\bfseries\sffamily\color{subsectioncolor}}
+  {\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\sffamily\color{subsectioncolor}}
+  {\thesubsubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{2em}{1em}
+\titlespacing*{\subsection}{0pt}{1.5em}{0.5em}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.5em}
+
+% ============================================================
+% Header / Footer
+% ============================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{gray}Cross the Storm}
+\fancyhead[R]{\small\sffamily\color{gray}Tony Seah}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================================================
+% Pandoc compatibility
+% ============================================================
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% ============================================================
+\begin{document}
+
+% Title page
+\begin{titlepage}
+\centering
+\vspace*{4cm}
+{\Huge\bfseries\sffamily\color{sectioncolor} Cross the Storm\par}
+\vspace{0.8cm}
+{\Large\color{subsectioncolor} An Ordinary Person's Survival Guide\\for the Silicon Age\par}
+\vspace{0.5cm}
+{\color{rulecolor}\rule{0.5\textwidth}{1pt}\par}
+\vspace{0.5cm}
+{\large\color{gray}\textit{活下去：硅基时代普通人的生存指北}\par}
+\vspace{3cm}
+{\Large Tony Seah\par}
+\vspace{0.5cm}
+{\normalsize\color{HTML2196F3}\href{https://tokligence.ai}{tokligence.ai}\par}
+\vspace{0.3cm}
+{\normalsize\href{mailto:tony.seah@tokligence.ai}{tony.seah@tokligence.ai}\par}
+\vspace{3cm}
+{\large\color{gray} v0.1 \quad March 2026\par}
+\vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% Include pandoc-generated body
+\input{body-en.tex}
+
+\end{document}
